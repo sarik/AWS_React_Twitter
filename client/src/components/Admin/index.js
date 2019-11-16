@@ -10,7 +10,7 @@ import Tweet from '../Tweets';
 
 const AdminPage = () => (
   <div style = {{marginLeft:'220px'}}>
-    <h1>You tweeted the following</h1>
+    <h1>You tweeted the following.Have a look...</h1>
    
 
     {/* <Switch>

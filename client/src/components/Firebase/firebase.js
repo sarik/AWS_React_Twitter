@@ -2,6 +2,17 @@ import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
+
+console.log("*****");
+console.log(process.env.REACT_APP_API_KEY,'logginh key')
+console.log(process.env.REACT_APP_AUTH_DOMAIN,'logginh key')
+console.log(process.env.REACT_APP_DATABASE_URL,'logginh key')
+console.log(process.env.REACT_APP_PROJECT_ID,'logginh key')
+console.log(process.env.REACT_APP_STORAGE_BUCKET,'logginh key')
+console.log(process.env.REACT_APP_MESSAGING_SENDER_ID,'logginh key')
+console.log(process.env.REACT_APP_APP_ID,'logginh key')
+
+
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,

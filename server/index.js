@@ -30,7 +30,7 @@ const pgClient = new Pool({
 pgClient.on('error', () => console.log('Lost PG connection'));
 
 pgClient
-  .query('CREATE TABLE IF NOT EXISTS user (firebaseID varchar PRIMARY key  ,firstname varchar,lastname varchar,created_at timestamp default now())')
+  .query('CREATE TABLE IF NOT EXISTS public.user (firebaseID varchar PRIMARY key  ,firstname varchar,lastname varchar,created_at timestamp default now())')
   .catch(err => console.log(err,'couldnt create user'));
 
 

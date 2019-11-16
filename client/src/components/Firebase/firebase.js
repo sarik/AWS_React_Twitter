@@ -12,8 +12,7 @@ console.log(process.env.REACT_APP_STORAGE_BUCKET,'logginh key')
 console.log(process.env.REACT_APP_MESSAGING_SENDER_ID,'logginh key')
 console.log(process.env.REACT_APP_APP_ID,'logginh key')
 
-
-const config = {
+/* const config = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   databaseURL: process.env.REACT_APP_DATABASE_URL,
@@ -21,6 +20,15 @@ const config = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId:process.env.REACT_APP_APP_ID,
+}; */
+const config = {
+  apiKey: "AIzaSyAR25l1f9EgLxgCfPaI7pZzyUSa5d-00so",
+  authDomain: "omix-207f4.firebaseapp.com",
+  databaseURL: "https://omix-207f4.firebaseio.com",
+  projectId: "omix-207f4",
+  storageBucket: "omix-207f4.appspot.com",
+  messagingSenderId:"419120328473",
+  appId:"1:419120328473:web:74a45730efe00a30",
 };
 
 class Firebase {

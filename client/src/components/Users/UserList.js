@@ -36,7 +36,7 @@ class UserList extends Component {
 
 
         let res = await axios.get(
-          `http://localhost:5000/api/fecthUsers?searchText=${JSON.stringify(
+          `/api/fecthUsers?searchText=${JSON.stringify(
           //`http://192.168.1.16:5000/api/fecthUsers?searchText=${JSON.stringify(
             nextProps.search
           )}&userId=${JSON.stringify(
@@ -61,7 +61,7 @@ class UserList extends Component {
 
 
       let res = await axios.get(
-        `http://localhost:5000/api/fecthUsers?searchText=${JSON.stringify(
+        `/api/fecthUsers?searchText=${JSON.stringify(
           //`http://192.168.1.16:5000/api/fecthUsers?searchText=${JSON.stringify(
             this.props.search
           )}&userId=${JSON.stringify(

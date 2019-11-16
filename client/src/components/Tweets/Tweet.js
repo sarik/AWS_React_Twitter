@@ -22,7 +22,7 @@ class Tweet extends Component {
 
     axios
       //.post("http://192.168.1.16:5000/api/storetweet", {
-      .post("http://localhost:5000/api/storetweet", {
+      .post("/api/storetweet", {
 
         firebaseId: authUser.uid,
         tweet: this.state.tweet,

@@ -56,7 +56,7 @@ class SignUpFormBase extends Component {
         console.log('checking',authUser.user.uid)
         axios
         //.post("http://192.168.1.16:5000/api/register", {
-          .post("http://localhost:5000/api/register", {
+          .post("/api/register", {
 
           firebaseId: authUser.user.uid,
           name: username,

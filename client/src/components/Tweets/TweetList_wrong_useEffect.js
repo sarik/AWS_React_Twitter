@@ -28,7 +28,7 @@ const TweetList = (props) => {
       setMyTweets({ tweets: [], isFetching: true });
       
       let res = await axios.get(
-        `http://localhost/api/getMyTweets?userId=${JSON.stringify(
+        `/api/getMyTweets?userId=${JSON.stringify(
           id
         )}`
       );

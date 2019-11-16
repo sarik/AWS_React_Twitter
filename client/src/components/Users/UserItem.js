@@ -13,7 +13,7 @@ const UserItem = (props) => {
 
       axios
       //.post("http://192.168.1.16:5000/api/storetweet", {
-      .post("http://localhost:5000/api/toggleFollowing", {
+      .post("/api/toggleFollowing", {
 
         user:uid,
         follower: firebaseid,

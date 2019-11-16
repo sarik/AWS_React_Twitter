@@ -21,7 +21,7 @@ export const useFetch = (id, context) => {
 
           let res = await axios.get(
             //http://192.168.1.16:5000
-            `http://localhost:5000/api/${apiToCall}?userId=${JSON.stringify(
+            `/api/${apiToCall}?userId=${JSON.stringify(
               id
             )}`
           );

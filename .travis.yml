@@ -24,8 +24,9 @@ deploy:
   region: us-east-2
   app: Twitter_Sim
   env: TwitterSim-env
-  bucket: multi-docker-test
+  bucket: elasticbeanstalk-us-east-2-893848630104
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
+  edge: true

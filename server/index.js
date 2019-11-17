@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-console.log("*******")
+console.log("***##****")
 console.log(keys.pgUser)
 console.log(keys.pgHost)
 console.log(keys.pgDatabase)
@@ -22,8 +22,8 @@ console.log(keys.pgPort)
 const { Pool } = require('pg');
 const pgClient = new Pool({
   user: keys.pgUser,
-  host: keys.pgHost,
-  database: "twitter-sim-db2.crbjap2en2yp.us-east-2.rds.amazonaws.com",
+  host: "twitter-sim-db2.crbjap2en2yp.us-east-2.rds.amazonaws.com",
+  database: keys.pgDatabase,
   password: keys.pgPassword,
   port: keys.pgPort
 });

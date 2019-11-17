@@ -23,7 +23,7 @@ const { Pool } = require('pg');
 const pgClient = new Pool({
   user: keys.pgUser,
   host: keys.pgHost,
-  database: keys.pgDatabase,
+  database: "twitter-sim-db2.crbjap2en2yp.us-east-2.rds.amazonaws.com",
   password: keys.pgPassword,
   port: keys.pgPort
 });

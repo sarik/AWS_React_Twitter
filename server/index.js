@@ -21,18 +21,13 @@ console.log(keys.pgPort)
 // Postgres Client Setup
 const { Pool } = require('pg');
 const pgClient = new Pool({
-  user: keys.pgUser,
+  user: "postgres",
   host: "twitter-sim-db2.crbjap2en2yp.us-east-2.rds.amazonaws.com",
-  database: keys.pgDatabase,
-  password: keys.pgPassword,
-  port: keys.pgPort
+  database: "twitter",
+  password: "postgrespassword",
+  port: "5432"
 });
 pgClient.on('error', () => console.log('Lost PG connection'));
-
-await pgClient
-  .query('drop table IF EXISTS user')
-  .then(cr => console.log('deleted  table user'))
-  .catch(err => console.log(err,'couldnt delete  user'));
 
 
   await pgClient
@@ -44,6 +39,11 @@ await pgClient
   .query('drop table IF EXISTS followers')
   .then(cr => console.log('deleted  table followers'))
   .catch(err => console.log(err,'couldnt delete  followers'));
+
+  await pgClient
+  .query('drop table IF EXISTS user')
+  .then(cr => console.log('deleted  table user'))
+  .catch(err => console.log(err,'couldnt delete  user'));
 
 
 

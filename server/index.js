@@ -32,10 +32,11 @@ pgClient.on('error', () => console.log('Lost PG connection'));
 pgClient
   .query('CREATE TABLE IF NOT EXISTS values (number INT)')
   .then(cr => console.log('created values db'))
-  .catch(err => console.log(err));
+  .catch(err => console.log(err,'couldnt create values'));
 
 pgClient
-  .query('CREATE TABLE IF NOT EXISTS user (firebaseID varchar PRIMARY key  ,firstname varchar,lastname varchar,created_at timestamp default now())')
+  .query('CREATE TABLE IF NOT EXISTS user (firebaseID varchar PRIMARY key ,firstname varchar,lastname varchar,created_at timestamp default now())')
+  .then(cr => console.log('created user db'))
   .catch(err => console.log(err,'couldnt create user'));
 
 

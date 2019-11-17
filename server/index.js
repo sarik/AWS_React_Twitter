@@ -40,13 +40,13 @@ pgClient.connect().
     return client
   }).
   catch(e => console.log(e, 'error in dropping tweets'))
-  .then(client => {
-    client.query("drop table IF EXISTS user");
+   .then(client => {
+    client.query("drop table IF EXISTS member");
     return client
   }).
-  catch(e => console.log(e, 'error in dropping user'))
+  catch(e => console.log(e, 'error in dropping member')) 
   .then(client => {
-    client.query(`CREATE TABLE IF NOT EXISTS user (
+    client.query(`CREATE TABLE IF NOT EXISTS member (
     firebaseID varchar PRIMARY key  ,
      firstname varchar,
      lastname varchar,
@@ -54,7 +54,7 @@ pgClient.connect().
    )`);
     return client
   })
-  .catch(e => console.log(e, 'error in creating user'))
+  .catch(e => console.log(e, 'error in creating member'))
   .then(client => {
     client.query(`CREATE TABLE IF NOT EXISTS tweets (
       id SERIAL PRIMARY key ,
@@ -90,7 +90,7 @@ app.use("/fecthUsersold", async (req, res) => {
     //const client = await pgPool.connect();
     let searchText = req.query.searchText;
     console.log(searchText)
-    let query = `select * from user where firstname ilike \'%${searchText}\%' 
+    let query = `select * from member where firstname ilike \'%${searchText}\%' 
   `.replace(/"/g, "")
 
     // query = 'select  concat(post,created_at)  as tweet from tweets where user_id = 'LPR1q8RgOJU74qQosz22cYPIjkI3';
@@ -123,7 +123,7 @@ app.use("/fecthUsers", async (req, res) => {
 
     let query = `select *,
  array[firebaseid] <@ (select followers from followers where id = \'${userId}\'  ) as dofollow
-   from user where firstname ilike \'%${searchText}\%' 
+   from member where firstname ilike \'%${searchText}\%' 
    `.replace(/"/g, "")
 
     //let query = `select * from user where firstname ilike \'%${searchText}\%' 
@@ -189,7 +189,7 @@ app.use("/getFollowerTweets", async (req, res) => {
     console.log(userId)
 
     let query = `select post ,a.created_at as created_at ,firstname from tweets a
-  join "user" b
+  join "member" b
   on b.firebaseid = a.user_id
     where  array[a.user_id] <@  (select followers from followers where id =  \'${userId}\' )`.
       replace(/"/g, "")
@@ -224,7 +224,7 @@ app.post('/register', async (req, res) => {
     const name = req.body.name;
 
 
-    let query = 'INSERT INTO user(firebaseID, firstname) VALUES( $1 ,$2)';
+    let query = 'INSERT INTO member(firebaseID, firstname) VALUES( $1 ,$2)';
 
     await pgClient.query(query, [fId, name]);
 

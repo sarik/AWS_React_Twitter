@@ -105,6 +105,7 @@ app.use("/fecthUsersold", async (req, res) => {
     res.status(200).send(dbdata.rows);
 
   } catch (e) {
+    console.log(e,'error in fetch uaer old')
     if (client)
       await client.release();
     res.status(400).send(e);
@@ -142,6 +143,7 @@ app.use("/fecthUsers", async (req, res) => {
     res.status(200).send(dbdata.rows);
 
   } catch (e) {
+    console.log(e,'error in fetch uaer')
     if (client)
       await client.release();
     res.status(400).send(e);
@@ -171,6 +173,7 @@ app.use("/getMyTweets", async (req, res) => {
     res.status(200).send(dbdata.rows);
 
   } catch (e) {
+    console.log(e,'error in  getmy tweet')
     if (client)
       await client.release();
     res.status(400).send(e);
@@ -203,6 +206,7 @@ app.use("/getFollowerTweets", async (req, res) => {
     res.status(200).send(dbdata.rows);
 
   } catch (e) {
+    console.log(e,'error in get followers tweet')
     if (client)
       await client.release();
     res.status(400).send(e);
@@ -234,6 +238,7 @@ app.post('/register', async (req, res) => {
     res.status(200).send({ registered: true });
 
   } catch (e) {
+    console.log(e,'error in register')
     if (client)
       await client.release();
     res.status(400).send({ registered: false });
@@ -264,6 +269,7 @@ app.post('/toggleFollowing', async (req, res) => {
     res.status(200).send({ registered: true });
 
   } catch (e) {
+    console.log(e,'error in toggle following')
     if (client)
       await client.release();
     res.status(400).send({ registered: false });
@@ -287,6 +293,7 @@ app.post('/storetweet', async (req, res) => {
     res.status(200).send({ tweeted: true });
   }
   catch (e) {
+    console.log(e,'error in storing tweet')
     if (client)
       await client.release();
     res.status(400).send({ tweeted: false });

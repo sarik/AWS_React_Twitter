@@ -29,7 +29,9 @@ const pgClient = new Pool({
 });
 pgClient.on('error', () => console.log('Lost PG connection'));
 
-pgClient.connect().
+//one time code to create initial tables
+
+/* pgClient.connect().
   then(client => {
     client.query("drop table IF EXISTS followers");
     return client
@@ -73,7 +75,7 @@ pgClient.connect().
      
     )`);
     return client
-  }).then(client => client.release()).catch(e => console.log(e, 'error in creating followers'))
+  }).then(client => client.release()).catch(e => console.log(e, 'error in creating followers')) */
 
 
 
